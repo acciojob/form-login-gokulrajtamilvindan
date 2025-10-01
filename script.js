@@ -1,17 +1,12 @@
+document.getElementById("form1").addEventListener("submit", getFormvalue);
+
 function getFormvalue(event) {
-    // Prevent form submission
-    event.preventDefault();
-    
-    // Get input values using querySelector
-    const firstName = document.querySelector('input[name="fname"]').value.trim();
-    const lastName = document.querySelector('input[name="lname"]').value.trim();
-    
-    // Validate inputs
-    if (!firstName || !lastName) {
-        alert("Please fill in both first name and last name");
-        return;
-    }
-    
-    // Display full name
-    alert(`${firstName} ${lastName}`);
+  event.preventDefault(); // prevent page reload
+
+  let firstName = document.forms["form1"]["fname"].value.trim();
+  let lastName = document.forms["form1"]["lname"].value.trim();
+
+  let fullName = firstName + " " + lastName;
+
+  alert(fullName);
 }
